@@ -1,17 +1,49 @@
-<ion-header [translucent]="true">
+<ion-header >
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      <img src="/assets/image/logo-cerro-horizontal.png" width="60%" height="60%"/>      
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+<ion-content>
+
+  <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide *ngFor="let new of news" [routerLink]="['/','news-detail', new.id]">
+      <ion-card style="margin: 0 !important;">
+        <img src="{{new.image}}" />
+        <div class="category-slide"><strong>internacional</strong></div>
+        <ion-card-header>
+          <ion-card-title>{{new.tittle}}</ion-card-title>
+          <ion-card-subtitle>
+            <ion-icon name="calendar-sharp"></ion-icon>
+            {{new.created_at| date:'dd/MM/yyyy'}}
+          </ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
+  <div class="container">
+    <ion-spinner *ngIf="showSpinner" color="primary"></ion-spinner>
+  </div>
+  <ion-card *ngFor="let new of news" [routerLink]="['/','news-detail', new.id]">
+    <img src="{{new.image}}" />
+    <div class="category"><strong>internacional</strong></div>
+    <ion-card-header style="padding-bottom: 0px !important;">
+      <ion-card-title>{{new.tittle}}</ion-card-title>         
+    </ion-card-header>
+    <ion-item-divider>
+      <ion-card-subtitle>
+        <ion-icon name="calendar-sharp"></ion-icon>
+        {{new.created_at| date:'dd-MMM-yyyy'}}
+      </ion-card-subtitle>
+    </ion-item-divider> 
+    <ion-card-content>
+      {{new.short_content}}
+    </ion-card-content>
+  </ion-card>
+  
+
 </ion-content>

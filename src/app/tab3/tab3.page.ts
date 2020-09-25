@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ServicesService } from '../services/services.service';
 
 @Component({
   selector: 'app-tab3',
@@ -6,7 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
-
-  constructor() {}
+  showSpinner : boolean = true;
+  infoContact : any = [];
+  constructor(private contactService : ServicesService) {
+    this.contactService.getContactInfo().subscribe(
+      res => {             
+        this.infoContact = res[0];
+        this.showSpinner = false;
+      },
+      error => {
+        console.log(error)
+      });
+  }
 
 }

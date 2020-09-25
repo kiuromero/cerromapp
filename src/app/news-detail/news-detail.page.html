@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title><strong>Noticias</strong></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <ion-spinner *ngIf="showSpinner" color="primary"></ion-spinner>
+  </div>
+  <ion-card *ngIf="!showSpinner" >
+    <img src="{{newsDetail.image}}" />
+    <div class="category"><strong>internacional</strong></div>
+    <ion-card-header>
+      <ion-card-title>{{newsDetail.tittle}}</ion-card-title>    
+    </ion-card-header>   
+    <ion-item-divider>
+      <ion-card-subtitle>
+        <ion-icon name="calendar-sharp"></ion-icon>
+        {{newsDetail.created_at| date:'dd-MMM-yyyy'}}
+      </ion-card-subtitle>
+    </ion-item-divider>   
+    <ion-card-content>
+      {{newsDetail.content}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,28 @@
+ion-toolbar {
+    text-align: center;
+    }
+
+    ion-title {
+        background-color:#005587 !important;
+      }
+
+      ion-content{
+        --ion-background-color:  white //#D5D8DC;
+      }
+
+      ion-card {   
+        //margin: 16px 0px 0px 0px !important;
+        //padding: 0 !important;
+        text-align: center !important;
+        //border-radius: 10px 10px 10px 10px !important;
+        border-radius: 0 !important;    
+        background-color: white !important;
+        }
+        ion-item-divider {
+          --ion-background-color: white !important;
+          text-align: center !important;
+      }
+
+      .container{       
+        text-align: center;
+    }

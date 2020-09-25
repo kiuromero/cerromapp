@@ -1,17 +1,50 @@
-<ion-header [translucent]="true">
+<ion-header >
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      <img src="/assets/image/logo-cerro-horizontal.png" width="60%" height="60%"/>      
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="container">
+    <ion-spinner *ngIf="showSpinner" color="primary"></ion-spinner>
+  </div>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-card *ngIf="!showSpinner" >
+    <ion-card-header>
+      <ion-card-title>Información de Contacto</ion-card-title>
+    </ion-card-header>
+    <ion-item-divider>
+      <ion-card-subtitle>
+        <ion-icon name="call-sharp"></ion-icon>
+        {{infoContact.cellphone}}
+      </ion-card-subtitle>
+    </ion-item-divider>
+    <ion-item-divider>
+      <ion-card-subtitle>
+        <ion-icon name="logo-whatsapp"></ion-icon>
+        {{infoContact.whatsapp}}
+      </ion-card-subtitle>
+    </ion-item-divider>
+    <ion-item-divider>
+      <ion-card-subtitle>
+        <ion-icon name="location-sharp"></ion-icon>
+        {{infoContact.adress}}
+      </ion-card-subtitle>
+    </ion-item-divider>
+    <ion-item-divider>
+      <ion-card-subtitle>
+        <ion-icon name="mail-sharp"></ion-icon>
+        {{infoContact.email}}
+      </ion-card-subtitle>
+    </ion-item-divider>
+    <ion-item-divider>
+      <ion-card-subtitle>
+        <ion-icon name="globe-sharp"></ion-icon>
+        {{infoContact.site}}
+      </ion-card-subtitle>
+    </ion-item-divider>
+    
+  </ion-card>
 </ion-content>
