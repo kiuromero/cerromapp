@@ -2,13 +2,19 @@
   <ion-toolbar>
     <ion-title>
       <img src="/assets/image/logo-cerro-horizontal.png" width="60%" height="60%"/>      
-    </ion-title>
+    </ion-title>    
+   <ion-item>
+      <ion-label>Categoría</ion-label>
+      <ion-select placeholder="Todas">
+        <ion-select-option value="f">Female</ion-select-option>
+        <ion-select-option value="m">Male</ion-select-option>
+      </ion-select>
+    </ion-item>
   </ion-toolbar>
 </ion-header>
 
 
-<ion-content>
-
+<ion-content> 
   <ion-slides pager="true" [options]="slideOpts">
     <ion-slide *ngFor="let new of news" [routerLink]="['/','news-detail', new.id]">
       <ion-card style="margin: 0 !important;">
