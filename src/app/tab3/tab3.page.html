@@ -12,23 +12,14 @@
   </div>
 
   <ion-card *ngIf="!showSpinner" >
+    <ion-card-header>
+      <ion-card-title>Nuestras Instalaciones</ion-card-title>
+    </ion-card-header>
     <ion-slides pager="true" [options]="slideOpts">
-      <ion-slide>
+      <ion-slide *ngFor="let image of gallery">
         <img
-          src="https://admin.bluradio.com/sites/default/files/styles/galleria_amp_resize_1280_169/public/blog_deportivo_blu_radio_9.png?itok=gjEdRkIZ" />
-      </ion-slide>
-      <ion-slide>
-        <img
-          src="https://admin.bluradio.com/sites/default/files/styles/blu_medium_650x466/public/blu_radio_blog_deportivo_foto_blu_radio.jpg?itok=z6Sl4g40" />
-      </ion-slide>
-      <ion-slide>
-        <img
-          src="https://admin.bluradio.com/sites/default/files/styles/blu_medium_650x466/public/blu_radio_blog_deportivo_foto_blu_radio.jpg?itok=z6Sl4g40" />
-      </ion-slide>
-      <ion-slide>
-        <img
-          src="https://admin.bluradio.com/sites/default/files/styles/blu_medium_650x466/public/blu_radio_blog_deportivo_foto_blu_radio.jpg?itok=z6Sl4g40" />
-      </ion-slide>
+          src="{{image.image}}"  />
+      </ion-slide>     
     </ion-slides>
     <ion-card-header>
       <ion-card-title>Información de Contacto</ion-card-title>

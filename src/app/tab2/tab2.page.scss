@@ -1,11 +1,20 @@
 ion-card {   
-    margin: 16px 0px 0px 0px !important;
-    padding: 0 !important;
+    margin: 16px  !important;
+    //padding: 0 !important;
     text-align: left !important;
     //border-radius: 10px 10px 10px 10px !important;
-    border-radius: 0 !important;    
+    border-radius: 10px !important;    
     background-color: white !important;
+    box-shadow: 2px 10px 12px rgba(0,0,0,0.5);
     }
+
+ion-card:hover{
+    //background-color: #17171d !important;
+    transform-style: preserve-3d !important;
+    transform: scale(1.02) !important;
+    transition: all ease 0.3s !important;
+    border-color: none !important;
+}
 
 ion-toolbar {
         text-align: center;

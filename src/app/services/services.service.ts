@@ -25,4 +25,22 @@ export class ServicesService {
   getContactInfo(){
     return this.http.get<any>(this.apiUrl + 'adress');
   }
+
+  getCategories(){
+    return this.http.get<any>(this.apiUrl + 'categories');
+  }
+
+  getNewsForCategory(id){
+    return this.http.get<any>(`${this.apiUrl}news-category/${id}`);
+  }
+
+  getPrograms(){
+    return this.http.get<any>(this.apiUrl + 'programs');
+  }
+
+  getGalleryImages(){
+    return this.http.get<any>(this.apiUrl + 'gallery-images');
+  }
+
+  
 }

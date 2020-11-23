@@ -9,15 +9,18 @@ import { ServicesService } from '../services/services.service';
 export class Tab2Page {
   news: any = [];
   newHome : any = [];
+  categories : any =  [];
   showSpinner : boolean = true;
   slideOpts = {
     initialSlide: 1,
     speed: 1000,
     autoplay: true,
   };
-  constructor(private newsService : ServicesService) {}
+  constructor(private newsService : ServicesService) {
+    this.getCategories();
+  }
 
-  ngOnInit() {
+  ngOnInit() {    
     this.getAllNews();
   }
 
@@ -37,6 +40,37 @@ export class Tab2Page {
       error => {
         console.log(error)
       });
+  }
+
+  getCategories(){
+    this.newsService.getCategories().subscribe(
+      res => {  
+        console.log(res)        
+        this.categories = res.map((obj) => {
+          return { id: obj.id, nom :obj.nom };
+        });        
+      },
+      error => {
+        console.log(error)
+      });
+
+  }
+
+  searchCategory(event){   
+    let idCategory = event.detail.value;
+    this.showSpinner = true;
+    this.newsService.getNewsForCategory(idCategory).subscribe(
+      res => {  
+        console.log(res)        
+        this.news = res.map((obj) => {
+          return { id: obj.id, tittle: obj.tittle, content: obj.content, image: obj.image, created_at: obj.created_at, short_content :obj.short_content };
+        });
+        this.showSpinner = false;     
+      },
+      error => {
+        console.log(error)
+      });
+
   }
 
 
