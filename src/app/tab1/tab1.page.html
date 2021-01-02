@@ -8,12 +8,12 @@
 
 <ion-content [fullscreen]="true">
     <div class="contenedor" >
-      <div class="container">
+      <div class="centrado">
         <ion-spinner *ngIf="showSpinner" color="primary"></ion-spinner>
       </div>
        
       <div class="banner">
-        <img style="border-radius: 0 !important;"
+        <img style="border-radius: 0 !important; margin-top: 32px;"
           src="https://admin.bluradio.com/sites/default/files/styles/galleria_amp_resize_1280_169/public/blog_deportivo_blu_radio_9.png?itok=gjEdRkIZ" />
       </div>
       <div class="texto-encima"><strong>estas escuchando</strong></div>
@@ -31,13 +31,13 @@
     <br> 
     <br> 
     <strong style="padding-left: 16px;">Nuestros Programas</strong>   
-  
-    <ion-slides pager="true" [options]="slideOpts">      
-      <ion-slide>        
-          <img src="https://admin.bluradio.com/sites/default/files/styles/galleria_amp_resize_1280_169/public/blog_deportivo_blu_radio_9.png?itok=gjEdRkIZ" />
-      </ion-slide>
-      <ion-slide>       
-          <img src="https://admin.bluradio.com/sites/default/files/styles/blu_medium_650x466/public/blu_radio_blog_deportivo_foto_blu_radio.jpg?itok=z6Sl4g40" />
-      </ion-slide>
-    </ion-slides> 
+  <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide *ngFor="let program of programs">
+      <ion-card> 
+        <img
+        src="{{program.image}}" style="max-width: 100%  !important; width: 290px  !important; max-height: 100%  !important; height: 250px  !important;" />      
+      
+      </ion-card>
+     </ion-slide>
+  </ion-slides>
 </ion-content>

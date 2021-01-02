@@ -13,6 +13,15 @@
 
   <ion-card *ngIf="!showSpinner" >
     <ion-card-header>
+      <ion-card-title>Nuestras Instalaciones</ion-card-title>
+    </ion-card-header>
+    <ion-slides pager="true" [options]="slideOpts">
+      <ion-slide *ngFor="let image of gallery">
+        <img
+          src="{{image.image}}"  />
+      </ion-slide>     
+    </ion-slides>
+    <ion-card-header>
       <ion-card-title>Información de Contacto</ion-card-title>
     </ion-card-header>
     <ion-item-divider>

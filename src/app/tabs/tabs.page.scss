@@ -1,3 +1,16 @@
-ion-tab-button {
+/* ion-tab-button {
     color: #005587 !important;
-}
+} */
+ion-tab-button:hover {
+    //background: #005587;
+    color: #005587 !important;
+  }
+
+  .centrado{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-transform: capitalize;
+   }

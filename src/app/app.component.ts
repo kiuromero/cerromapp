@@ -11,6 +11,7 @@ import { BackgroundMode } from '@ionic-native/background-mode/ngx';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
+  //splash = true;
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -25,6 +26,9 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
       //this.backgroundMode.enable();
+     /*  setTimeout(() => {
+        this.splash = false;
+      }, 5000); */
     });
   }
 }
