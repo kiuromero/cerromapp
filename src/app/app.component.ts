@@ -1,22 +1,24 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
-import { Platform } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { BackgroundMode } from '@ionic-native/background-mode/ngx';
+import { Platform } from "@ionic/angular";
+import { SplashScreen } from "@ionic-native/splash-screen/ngx";
+import { StatusBar } from "@ionic-native/status-bar/ngx";
+import { BackgroundMode } from "@ionic-native/background-mode/ngx";
+import { AlertController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.scss']
+  selector: "app-root",
+  templateUrl: "app.component.html",
+  styleUrls: ["app.component.scss"],
 })
 export class AppComponent {
-  //splash = true;
+  splash = true;
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private backgroundMode: BackgroundMode
+    private backgroundMode: BackgroundMode,
+    public alertController: AlertController
   ) {
     this.initializeApp();
   }
@@ -25,10 +27,9 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      //this.backgroundMode.enable();
-     /*  setTimeout(() => {
+      setTimeout(() => {
         this.splash = false;
-      }, 5000); */
+      }, 3000);
     });
-  }
+  }  
 }

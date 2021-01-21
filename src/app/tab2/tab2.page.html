@@ -1,21 +1,36 @@
-<ion-header >
+<ion-header>
   <ion-toolbar>
     <ion-title>
-      <img src="/assets/image/logo-cerro-horizontal.png" width="60%" height="60%"/>      
-    </ion-title>    
+      <img
+        src="/assets/image/logo-cerro-horizontal.png"
+        width="60%"
+        height="60%"
+      />
+    </ion-title>
     <ion-item>
       <ion-label>Categorías</ion-label>
-      <ion-select interface="popover" (ionChange)="searchCategory($event)"  >
-        <ion-select-option *ngFor="let category of categories" value="{{category.id}}">{{category.nom}}</ion-select-option>       
+      <ion-select interface="popover" (ionChange)="searchCategory($event)">
+        <ion-select-option
+          *ngFor="let category of categories"
+          value="{{category.id}}"
+          >{{category.nom}}</ion-select-option
+        >
       </ion-select>
     </ion-item>
   </ion-toolbar>
 </ion-header>
 
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-slides pager="true" [options]="slideOpts">
+    <img
+      style="width:inherit;"
+      src="https://www.cerromurillostereo.com/wp-content/uploads/2020/12/22-27-42-JaAJ9o5.gif"
+    />
 
-<ion-content> 
- <!--  <ion-slides pager="true" [options]="slideOpts">
-    <ion-slide *ngFor="let new of news" [routerLink]="['/','news-detail', new.id]">    
+    <!--  <ion-slide *ngFor="let new of news" [routerLink]="['/','news-detail', new.id]">  
       <ion-card >
         <img src="{{new.image}}" />
         <div class="category-slide"><strong>internacional</strong></div>
@@ -27,28 +42,24 @@
           </ion-card-subtitle>
         </ion-card-header>
       </ion-card>
-    </ion-slide>
-  </ion-slides> -->
+    </ion-slide> -->
+  </ion-slides>
 
   <div class="container">
     <ion-spinner *ngIf="showSpinner" color="primary"></ion-spinner>
   </div>
   <ion-card *ngFor="let new of news" [routerLink]="['/','news-detail', new.id]">
-    <img src="{{new.image}}" />
-    <div class="category"><strong>internacional</strong></div>
-    <ion-card-header style="padding-bottom: 0px !important;">
-      <ion-card-title>{{new.tittle}}</ion-card-title>         
+    <img style="border-radius: 0 0 50px 50px;" src="{{new.image}}" />
+    <ion-card-header style="padding-bottom: 0px !important">
+      <div *ngIf="category" class="category"><strong>{{new.category}}</strong></div>
+      <ion-card-title>{{new.tittle}}</ion-card-title>
     </ion-card-header>
     <ion-item-divider>
       <ion-card-subtitle>
         <ion-icon name="calendar-sharp"></ion-icon>
-        {{new.created_at| date:'dd-MMM-yyyy'}}
+        Publicada: {{new.created_at| date:'dd/MM/yyyy'}}
       </ion-card-subtitle>
-    </ion-item-divider> 
-    <ion-card-content>
-      {{new.short_content}}
-    </ion-card-content>
+    </ion-item-divider>
+    <ion-card-content style="line-height: 1.5em;text-align: justify;color: black;"> {{new.short_content}} </ion-card-content>
   </ion-card>
-  
-
 </ion-content>
