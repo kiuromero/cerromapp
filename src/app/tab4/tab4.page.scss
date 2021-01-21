@@ -1,9 +1,9 @@
 ion-card {
   margin: 16px !important;
   //padding: 0 !important;
-  text-align: left !important;
+  text-align: center !important;
   //border-radius: 10px 10px 10px 10px !important;
-  border-radius: 10px !important;
+  border-radius: 10px 10px 10px 10px !important;
   background-color: white !important;
   box-shadow: 1px 5px 5px 1px #d7d8da; //2px 10px 12px rgba(0, 0, 0, 0.5);
 }
@@ -27,9 +27,9 @@ ion-item-divider {
   --ion-background-color: white !important;
 }
 
-.container {
+/* .container {
   text-align: center;
-}
+} */
 
 .contenedor {
   position: relative;

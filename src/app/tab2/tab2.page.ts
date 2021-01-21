@@ -16,6 +16,7 @@ export class Tab2Page {
     speed: 1000,
     autoplay: true,
   };
+  category = true;
   constructor(private newsService : ServicesService) {
     this.getCategories();
   }
@@ -33,7 +34,7 @@ export class Tab2Page {
         this.newHome.image = res[0].image
         this.newHome.created_at = res[0].created_at
         this.news = res.map((obj) => {
-          return { id: obj.id, tittle: obj.tittle, content: obj.content, image: obj.image, created_at: obj.created_at, short_content :obj.short_content };
+          return { id: obj.id, tittle: obj.tittle, content: obj.content, image: obj.image, created_at: obj.created_at, short_content :obj.short_content, category : obj.nom };
         });
         this.showSpinner = false;
       },
@@ -56,14 +57,14 @@ export class Tab2Page {
 
   }
 
-  searchCategory(event){   
+  searchCategory(event){    
     let idCategory = event.detail.value;
     this.showSpinner = true;
     this.newsService.getNewsForCategory(idCategory).subscribe(
       res => {  
-        console.log(res)        
+        this.category = false;     
         this.news = res.map((obj) => {
-          return { id: obj.id, tittle: obj.tittle, content: obj.content, image: obj.image, created_at: obj.created_at, short_content :obj.short_content };
+          return { id: obj.id, tittle: obj.tittle, content: obj.content, image: obj.image, created_at: obj.created_at, short_content :obj.short_content, category : obj.nom };
         });
         this.showSpinner = false;     
       },
@@ -71,6 +72,14 @@ export class Tab2Page {
         console.log(error)
       });
 
+  }
+
+  doRefresh(event) { 
+    setTimeout(() => {
+      this.category = true;
+      this.getAllNews();
+      event.target.complete();
+    }, 2000);
   }
 
 
