@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <img src="/assets/image/logo-cerro-horizontal.png" width="60%" height="60%" />
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container" style="text-align: center;">
+    <ion-spinner *ngIf="showSpinner" color="primary"></ion-spinner>
+  </div>
+  <ion-card *ngFor="let program of programs">
+    <img style="border-radius: 0 0 50px 50px;" src="{{program.image}}" />
+    <ion-card-title>Horario</ion-card-title>
+    <ion-card-header style="padding-bottom: 0px; bottom: 16px;">
+      <strong style="color: gray; font-size: 24px;">{{ program.start_time }} - {{ program.end_time }}</strong>
+    </ion-card-header>
+  </ion-card>
+</ion-content>

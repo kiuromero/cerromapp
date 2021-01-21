@@ -12,18 +12,18 @@
     <ion-spinner *ngIf="showSpinner" color="primary"></ion-spinner>
   </div>
   <ion-card *ngIf="!showSpinner" >
-    <img src="{{newsDetail.image}}" />
-    <div class="category"><strong>internacional</strong></div>
+    <img style="border-radius: 0 0 50px 50px;" src="{{newsDetail.image}}" />    
     <ion-card-header>
+     <!--  <div class="category"><strong>internacional</strong></div> -->
       <ion-card-title>{{newsDetail.tittle}}</ion-card-title>    
     </ion-card-header>   
     <ion-item-divider>
       <ion-card-subtitle>
         <ion-icon name="calendar-sharp"></ion-icon>
-        {{newsDetail.created_at| date:'dd-MMM-yyyy'}}
+         {{newsDetail.created_at| date:'dd/MM/yyyy'}}
       </ion-card-subtitle>
     </ion-item-divider>   
-    <ion-card-content>
+    <ion-card-content style="line-height: 1.5em;text-align: justify;color: black;">
       {{newsDetail.content}}
     </ion-card-content>
   </ion-card>
