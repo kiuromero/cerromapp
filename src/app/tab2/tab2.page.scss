@@ -74,3 +74,34 @@ ion-item-divider {
 ion-content {
   --ion-background-color: white; //#D5D8DC;
 }
+
+.album-avatar {
+  width: auto;
+  height: auto;  
+}
+.square-avatar {
+  --border-radius: 0;
+}
+ion-slide {
+  margin: 0 20px 0 20px;
+  font-size: 12px;
+}
+h1 {
+  font-size: 18px;
+  color: var(--ion-color-success);
+  margin-top: 30px;
+}
+ion-icon {
+  font-size: 26px;
+}
+.time-marker {
+  color: white;
+  font-size: 14px;
+}
+ion-progress {
+  margin-bottom: 10px;
+}
+h2 {
+  font-size: 16px;
+  margin-top: 3px;
+}

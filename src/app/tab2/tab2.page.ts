@@ -12,9 +12,10 @@ export class Tab2Page {
   categories : any =  [];
   showSpinner : boolean = true;
   slideOpts = {
-    initialSlide: 1,
-    speed: 1000,
-    autoplay: true,
+    initialSlide: 4,
+    slidesPerView: 1,
+    centeredSlides: true,
+    speed: 400,
   };
   category = true;
   constructor(private newsService : ServicesService) {

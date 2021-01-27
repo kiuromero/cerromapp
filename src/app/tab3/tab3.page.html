@@ -29,13 +29,7 @@
         <ion-icon name="call-sharp"></ion-icon>
         {{infoContact.cellphone}}
       </ion-card-subtitle>
-    </ion-item-divider>
-    <ion-item-divider>
-      <ion-card-subtitle>
-        <ion-icon name="logo-whatsapp"></ion-icon>
-        {{infoContact.whatsapp}}
-      </ion-card-subtitle>
-    </ion-item-divider>
+    </ion-item-divider>    
     <ion-item-divider>
       <ion-card-subtitle>
         <ion-icon name="location-sharp"></ion-icon>
@@ -51,9 +45,14 @@
     <ion-item-divider>
       <ion-card-subtitle>
         <ion-icon name="globe-sharp"></ion-icon>
-        {{infoContact.site}}
+        <a href="javascript:return;" id="whatsapp" 
+        (click)="navigateSite()"><small  style="font-size: 14px;"> {{infoContact.site}}</small></a>       
       </ion-card-subtitle>
-    </ion-item-divider>
-    
+    </ion-item-divider>    
   </ion-card>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="success" (click)="contactWhatsaap()" >
+      <ion-icon name="logo-whatsapp"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

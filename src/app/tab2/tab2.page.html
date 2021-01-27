@@ -19,39 +19,45 @@
     </ion-item>
   </ion-toolbar>
 </ion-header>
-
+<br>
 <ion-content>
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-  <ion-slides pager="true" [options]="slideOpts">
-    <img
-      style="width:inherit;"
-      src="https://www.cerromurillostereo.com/wp-content/uploads/2020/12/22-27-42-JaAJ9o5.gif"
-    />
 
-    <!--  <ion-slide *ngFor="let new of news" [routerLink]="['/','news-detail', new.id]">  
-      <ion-card >
-        <img src="{{new.image}}" />
-        <div class="category-slide"><strong>internacional</strong></div>
-        <ion-card-header>
-          <ion-card-title>{{new.tittle}}</ion-card-title>
-          <ion-card-subtitle>
-            <ion-icon name="calendar-sharp"></ion-icon>
-            {{new.created_at| date:'dd-MMM-yyyy'}}
-          </ion-card-subtitle>
-        </ion-card-header>
-      </ion-card>
-    </ion-slide> -->
+  <ion-chip  style="background-color: #152a6d;">
+    <ion-label style="color: white"
+      ><strong>Publicidad</strong></ion-label
+    >
+  </ion-chip>
+
+  <ion-slides style="padding-top: 12px" [options]="slideOpts">
+    <ion-slide *ngFor="let new of news">
+      <ion-avatar class="album-avatar square-avatar">
+        <img
+          style="
+            width: auto;
+            height: 200px;
+            border-radius: 10px 10px;
+            box-shadow: -1px -1px 12px 1px #d7d8da;
+          "
+          [src]="new.image"
+        />
+      </ion-avatar>
+    </ion-slide>
   </ion-slides>
 
   <div class="container">
     <ion-spinner *ngIf="showSpinner" color="primary"></ion-spinner>
   </div>
   <ion-card *ngFor="let new of news" [routerLink]="['/','news-detail', new.id]">
-    <img style="border-radius: 0 0 50px 50px;" src="{{new.image}}" />
+    <img style="border-radius: 0 0 50px 50px" src="{{new.image}}" />
     <ion-card-header style="padding-bottom: 0px !important">
-      <div *ngIf="category" class="category"><strong>{{new.category}}</strong></div>
+      <ion-chip *ngIf="category" style="background-color: #152a6d">
+        <ion-label style="color: white"
+          ><strong>{{new.category}}</strong></ion-label
+        >
+      </ion-chip>
       <ion-card-title>{{new.tittle}}</ion-card-title>
     </ion-card-header>
     <ion-item-divider>
@@ -60,6 +66,10 @@
         Publicada: {{new.created_at| date:'dd/MM/yyyy'}}
       </ion-card-subtitle>
     </ion-item-divider>
-    <ion-card-content style="line-height: 1.5em;text-align: justify;color: black;"> {{new.short_content}} </ion-card-content>
+    <ion-card-content
+      style="line-height: 1.5em; text-align: justify; color: black"
+    >
+      {{new.short_content}}
+    </ion-card-content>
   </ion-card>
 </ion-content>

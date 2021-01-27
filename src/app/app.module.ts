@@ -20,8 +20,7 @@ import { BackgroundMode } from '@ionic-native/background-mode/ngx';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    BackgroundMode,
-        
+    BackgroundMode,         
   ],
   bootstrap: [AppComponent]
 })
