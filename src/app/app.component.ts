@@ -4,7 +4,7 @@ import { Platform } from "@ionic/angular";
 import { SplashScreen } from "@ionic-native/splash-screen/ngx";
 import { StatusBar } from "@ionic-native/status-bar/ngx";
 import { BackgroundMode } from "@ionic-native/background-mode/ngx";
-import { AlertController } from '@ionic/angular';
+import { AlertController } from "@ionic/angular";
 
 @Component({
   selector: "app-root",
@@ -25,11 +25,12 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
+      this.statusBar.styleLightContent();
+      this.statusBar.backgroundColorByHexString("#152a6d");
+      //this.splashScreen.hide(); 
       setTimeout(() => {
         this.splash = false;
-      }, 3000);
+      }, 2000);
     });
-  }  
+  }
 }
