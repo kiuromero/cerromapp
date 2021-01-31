@@ -10,76 +10,77 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content
-  style="background: rgb(21,42,109);
-  background: linear-gradient(180deg, rgba(21,42,109,1) 70%, rgba(0,0,0,1) 100%);"
-  padding
->
-  <img
-    style="width: 100%; height: 65%; padding: 24px;"
-    src="{{programShow.image}}"
-  />
-  <ion-grid style="padding: 24px">
-    <ion-row>
-      <ion-col style="text-align: left; line-height: 1.2em">
-        <strong style="color: white">
-          {{ programShow.nom }} <br />
-          <span style="color: #d7d8da; font-size: 12px"
-            >{{ programShow.start_time }} - {{ programShow.end_time }}
-          </span></strong
-        >
-      </ion-col>
-      <ion-col class="ion-text-end" size="3">
-        <ion-spinner *ngIf="showSpinner" style="color: #ffc409"></ion-spinner>
-        <ion-icon
-          name="caret-forward-circle-sharp"
-          style="color: #ffc409; font-size: 40px"
-          *ngIf="statusAudio && !showSpinner"
-          (click)="playAudio()"
-        >
-        </ion-icon>
-        <ion-icon
-          name="pause-circle-sharp"
-          style="color: #ffc409; font-size: 40px"
+<ion-content style="background-color: #152a6d" padding>
+  <img class="img-program" src="{{programShow.image}}" />
+  <div style="background-color: white; border-radius: 50px 50px 0 0">
+    <ion-grid style="padding: 24px">
+      <ion-row>
+        <ion-col style="text-align: center; line-height: 1.2em">
+          <strong style="color: black; font-size: 20px">
+            {{ programShow.nom }} <br />
+            <span style="color: #706e6e; font-size: 14px"
+              >{{ programShow.start_time }} - {{ programShow.end_time }}
+            </span></strong
+          >
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-progress-bar
           *ngIf="!statusAudio && !showSpinner"
-          (click)="stopAudio()"
-        >
-        </ion-icon>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-progress-bar
-        *ngIf="!statusAudio && !showSpinner"
-        value="0.0"
-        buffer="0.75"
-      ></ion-progress-bar>
-      <ion-progress-bar
-        *ngIf="statusAudio && !showSpinner"
-        value="0.0"
-        buffer="1"
-      ></ion-progress-bar>
-    </ion-row>
+          value="0.0"
+          buffer="0.75"
+        ></ion-progress-bar>
+        <ion-progress-bar
+          *ngIf="statusAudio && !showSpinner"
+          value="0.0"
+          buffer="1"
+        ></ion-progress-bar>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="ion-text-end time-marker">EN VIVO</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col style="text-align: center; line-height: 1.2em">
+          <ion-spinner *ngIf="showSpinner" style="color: #152a6d"></ion-spinner>
+          <ion-icon
+            name="caret-forward-circle-sharp"
+            style="color: #152a6d; font-size: 100px;  box-shadow: #d7d8da 0px 9px 9px 0px; border-radius: 50%;"
+            *ngIf="statusAudio && !showSpinner"
+            (click)="playAudio()"
+          >
+          </ion-icon>
+          <ion-icon
+            name="pause-circle-sharp"
+            style="color: #152a6d; font-size: 100px;  box-shadow: #d7d8da 0px 9px 9px 0px; border-radius: 50%;"
+            *ngIf="!statusAudio && !showSpinner"
+            (click)="stopAudio()"
+          >
+          </ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
     <ion-row>
-      <ion-col class="ion-text-end time-marker">EN VIVO</ion-col>
+      <strong
+        style="color: black; padding: 24px; text-align: left; padding-top: 0"
+      >
+        Programas</strong
+      >
     </ion-row>
-  </ion-grid>
-  <ion-row>
-    <strong
-      style="color: white; padding: 24px; text-align: left; padding-top: 0"
-    >
-      Programas</strong
-    >
-  </ion-row>
-  <ion-slides [options]="slideOpts">
-    <ion-slide *ngFor="let program of programs">
-      <ion-avatar class="album-avatar square-avatar">
-        <img width="90px" [src]="program.image" />
-        <span style="color: white">{{ program.nom }}</span>
-      </ion-avatar>
-    </ion-slide>
-  </ion-slides>
-  <br />
+    <ion-slides [options]="slideOpts">
+      <ion-slide *ngFor="let program of programs">
+        <ion-grid>
+          <ion-row>
+            <ion-avatar class="album-avatar square-avatar">
+              <img width="90px" [src]="program.image" />
+              <span style="color: black">{{ program.nom }}</span>
+            </ion-avatar>
+          </ion-row>
+        </ion-grid>
+      </ion-slide>
+    </ion-slides>
+  </div>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button color="success" (click)="contactWhatsaap()">
       <ion-icon name="logo-whatsapp"></ion-icon>
