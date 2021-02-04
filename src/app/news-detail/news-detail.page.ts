@@ -10,6 +10,7 @@ import {ActivatedRoute} from '@angular/router'
 export class NewsDetailPage implements OnInit {
   showSpinner : boolean = true;
   newsDetail : any = []; 
+  showToolbar = false;
   constructor(private activatedRoute : ActivatedRoute,
               private newsService : ServicesService  ) { }
 
@@ -24,6 +25,6 @@ export class NewsDetailPage implements OnInit {
       error=> {
 
       });
-  }
+  } 
 
 }

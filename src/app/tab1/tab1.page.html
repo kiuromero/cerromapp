@@ -12,8 +12,8 @@
 
 <ion-content style="background-color: #152a6d" padding>
   <img class="img-program" src="{{programShow.image}}" />
-  <div style="background-color: white; border-radius: 50px 50px 0 0">
-    <ion-grid style="padding: 24px">
+  <div *ngIf="!showSpinner" style="background-color: white; border-radius: 50px 50px 0 0">
+    <ion-grid style="padding: 40px">
       <ion-row>
         <ion-col style="text-align: center; line-height: 1.2em">
           <strong style="color: black; font-size: 20px">
@@ -74,7 +74,7 @@
           <ion-row>
             <ion-avatar class="album-avatar square-avatar">
               <img width="90px" [src]="program.image" />
-              <span style="color: black">{{ program.nom }}</span>
+              <span style="color: black;font-weight: bold;">{{ program.nom }}</span>
             </ion-avatar>
           </ion-row>
         </ion-grid>

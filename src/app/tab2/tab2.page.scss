@@ -5,10 +5,10 @@ ion-card {
   //border-radius: 10px 10px 10px 10px !important;
   border-radius: 10px !important;
   background-color: white !important;
-  box-shadow: 1px 5px 5px 1px #d7d8da; //2px 10px 12px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 5px 2px #d7d8da;
 }
 
-ion-card:hover { 
+ion-card:hover {
   transform-style: preserve-3d !important;
   transform: scale(1.02) !important;
   transition: all ease 0.3s !important;
@@ -59,10 +59,10 @@ ion-item-divider {
   color: white;
   background-color: #005587;
   //padding: 5px 5px 5px 5px;
-  border-radius: 5%; 
+  border-radius: 5%;
 }
 
-.category { 
+.category {
   text-transform: uppercase;
   color: white;
   background-color: #152a6d; //#005587 ;
@@ -77,7 +77,7 @@ ion-content {
 
 .album-avatar {
   width: auto;
-  height: auto;  
+  height: auto;
 }
 .square-avatar {
   --border-radius: 0;
@@ -105,3 +105,16 @@ h2 {
   font-size: 16px;
   margin-top: 3px;
 }
+
+ion-card-subtitle {
+  padding-left: 10px;
+  //padding-top: 10px;
+  /* color: black; */
+  font-style: italic;
+}
+
+ion-card-title {
+  font-size: 26px;
+  padding: 10px;
+}
+
