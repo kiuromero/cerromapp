@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
@@ -12,6 +12,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BackgroundMode } from '@ionic-native/background-mode/ngx';
 
+import localeEs from '@angular/common/locales/es';
+import {registerLocaleData} from '@angular/common';
+registerLocaleData(localeEs,'es');
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -20,6 +24,7 @@ import { BackgroundMode } from '@ionic-native/background-mode/ngx';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: LOCALE_ID, useValue :'es'},
     BackgroundMode,         
   ],
   bootstrap: [AppComponent]

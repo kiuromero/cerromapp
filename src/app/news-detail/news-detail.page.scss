@@ -1,6 +1,6 @@
 ion-content {
   --ion-background-color: white//#D5D8DC;
-  --ion-font-size: 1.2em !important; 
+  --ion-font-size: 1.2em !important;
 }
 
 ion-card {
@@ -25,9 +25,16 @@ ion-back-button {
 }
 
 ion-card-title {
-  font-size: 1.5em !important;
+  font-size: 30px;
+  padding: 10px;
 }
 
+ion-card-subtitle {
+  padding-left: 24px;
+  padding-top: 10px;
+  /* color: black; */
+  font-style: italic;
+}
 ion-item-divider {
   --ion-background-color: white !important;
 }
@@ -52,7 +59,7 @@ ion-card-header {
   border-radius: 5%;
 }
 
-.category { 
+.category {
   text-transform: uppercase;
   color: white;
   background-color: #152a6d; //#005587 ;
@@ -60,3 +67,4 @@ ion-card-header {
   border-radius: 2em/1.5em;
   text-align: center;
 }
+
