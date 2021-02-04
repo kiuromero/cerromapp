@@ -21,7 +21,7 @@ export class Tab1Page {
   };
   infoContact: any = [];
   programShow = {
-    nom: "CERRO MURILLO STEREO",
+    nom: "Cerro Murillo Stereo",
     start_time: "06:00",
     end_time: "22:00",
     image: '',

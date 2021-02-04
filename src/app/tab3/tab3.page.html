@@ -20,36 +20,36 @@
         <img
           src="{{image.image}}"  />
       </ion-slide>     
-    </ion-slides>
-    <ion-card-header>
+    </ion-slides>   
+  </ion-card>
+ 
+  <ion-card>
+    <ion-card-header>      
       <ion-card-title>Información de Contacto</ion-card-title>
-    </ion-card-header>
-    <ion-item-divider>
-      <ion-card-subtitle>
+    </ion-card-header>  
+      <ion-card-subtitle style="padding-top: 10px;">
         <ion-icon name="call-sharp"></ion-icon>
         {{infoContact.cellphone}}
-      </ion-card-subtitle>
-    </ion-item-divider>    
-    <ion-item-divider>
+      </ion-card-subtitle> 
+  
       <ion-card-subtitle>
         <ion-icon name="location-sharp"></ion-icon>
         {{infoContact.adress}}
-      </ion-card-subtitle>
-    </ion-item-divider>
-    <ion-item-divider>
+      </ion-card-subtitle>   
+   
       <ion-card-subtitle>
         <ion-icon name="mail-sharp"></ion-icon>
         {{infoContact.email}}
       </ion-card-subtitle>
-    </ion-item-divider>
-    <ion-item-divider>
+   
       <ion-card-subtitle>
         <ion-icon name="globe-sharp"></ion-icon>
         <a href="javascript:return;" id="whatsapp" 
         (click)="navigateSite()"><small  style="font-size: 14px;"> {{infoContact.site}}</small></a>       
       </ion-card-subtitle>
-    </ion-item-divider>    
+     
   </ion-card>
+
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button color="success" (click)="contactWhatsaap()" >
       <ion-icon name="logo-whatsapp"></ion-icon>
