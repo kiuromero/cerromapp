@@ -1,5 +1,5 @@
 {
-  "appId": "io.ionic.starter",
+  "appId": "com.compila.cerroMapp",
   "appName": "Cerro Murillo",
   "bundledWebRuntime": false,
   "npmClient": "npm",

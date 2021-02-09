@@ -31,6 +31,7 @@ ion-item-divider {
 ion-card-subtitle {
   margin-bottom: 10px;
   font-size: 16px;
+  color: black;
 }
 
 ion-card-header {
@@ -40,4 +41,9 @@ ion-card-header {
 ion-card-title {
   padding-bottom: 10px;
   font-weight: bold;
+}
+
+ion-icon {
+  font-size: 20px;
+  color: #152a6d;
 }

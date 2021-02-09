@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { HelpersService } from "../services/helpers.service";
 import { ServicesService } from "../services/services.service";
 
 @Component({
@@ -15,9 +16,12 @@ export class Tab3Page {
     speed: 1000,
     autoplay: true,
   };
-  constructor(private contactService: ServicesService) {
+  constructor(private contactService: ServicesService,
+    private helperService: HelpersService
+    ) {
     this.getContactInfo();
     this.getGalleryImages();
+    this.helperService.presentLoadingWithOptions();
   }
 
   getContactInfo() {

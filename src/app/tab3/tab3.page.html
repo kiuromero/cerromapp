@@ -1,7 +1,11 @@
-<ion-header >
+<ion-header>
   <ion-toolbar>
     <ion-title>
-      <img src="/assets/image/logo-cerro-horizontal.png" width="60%" height="60%"/>      
+      <img
+        src="/assets/image/logo-cerro-horizontal.png"
+        width="60%"
+        height="60%"
+      />
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,48 +15,47 @@
     <ion-spinner *ngIf="showSpinner" color="primary"></ion-spinner>
   </div>
 
-  <ion-card *ngIf="!showSpinner" >
+  <ion-card *ngIf="!showSpinner">
     <ion-card-header>
       <ion-card-title>Nuestras Instalaciones</ion-card-title>
     </ion-card-header>
     <ion-slides pager="true" [options]="slideOpts">
       <ion-slide *ngFor="let image of gallery">
-        <img
-          src="{{image.image}}"  />
-      </ion-slide>     
-    </ion-slides>   
+        <img src="{{image.image}}" />
+      </ion-slide>
+    </ion-slides>
   </ion-card>
- 
+
   <ion-card>
-    <ion-card-header>      
+    <ion-card-header>
       <ion-card-title>Información de Contacto</ion-card-title>
-    </ion-card-header>  
-      <ion-card-subtitle style="padding-top: 10px;">
-        <ion-icon name="call-sharp"></ion-icon>
-        {{infoContact.cellphone}}
-      </ion-card-subtitle> 
-  
-      <ion-card-subtitle>
-        <ion-icon name="location-sharp"></ion-icon>
-        {{infoContact.adress}}
-      </ion-card-subtitle>   
-   
-      <ion-card-subtitle>
-        <ion-icon name="mail-sharp"></ion-icon>
-        {{infoContact.email}}
-      </ion-card-subtitle>
-   
-      <ion-card-subtitle>
-        <ion-icon name="globe-sharp"></ion-icon>
-        <a href="javascript:return;" id="whatsapp" 
-        (click)="navigateSite()"><small  style="font-size: 14px;"> {{infoContact.site}}</small></a>       
-      </ion-card-subtitle>
-     
+    </ion-card-header>
+    <ion-card-subtitle style="padding-top: 10px">
+      <ion-icon name="call-sharp"></ion-icon>
+      {{infoContact.cellphone}}
+    </ion-card-subtitle>
+
+    <ion-card-subtitle>
+      <ion-icon name="location-sharp"></ion-icon>
+      {{infoContact.adress}}
+    </ion-card-subtitle>
+
+    <ion-card-subtitle>
+      <ion-icon name="mail-sharp"></ion-icon>
+      {{infoContact.email}}
+    </ion-card-subtitle>
+
+    <ion-card-subtitle>
+      <ion-icon name="globe-sharp"></ion-icon>
+      <a href="javascript:return;" id="whatsapp" (click)="navigateSite()"
+        ><small style="font-size: 14px"> {{infoContact.site}}</small></a
+      >
+    </ion-card-subtitle>
   </ion-card>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button color="success" (click)="contactWhatsaap()" >
-      <ion-icon name="logo-whatsapp"></ion-icon>
+    <ion-fab-button color="success" (click)="contactWhatsaap()">
+      <ion-icon style="color: white" name="logo-whatsapp"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 </ion-content>

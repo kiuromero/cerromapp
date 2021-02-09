@@ -13,13 +13,13 @@
 <ion-content style="background-color: #152a6d" padding>
   <img class="img-program" src="{{programShow.image}}" />
   <div *ngIf="!showSpinner" style="background-color: white; border-radius: 50px 50px 0 0">
-    <ion-grid style="padding: 40px">
+    <ion-grid style="padding: 40px; padding-top: 20px;">
       <ion-row>
         <ion-col style="text-align: center; line-height: 1.2em">
           <strong style="color: black; font-size: 20px">
             {{ programShow.nom }} <br />
             <span style="color: #706e6e; font-size: 14px"
-              >{{ programShow.start_time }} - {{ programShow.end_time }}
+              >{{ programShow.hours_string }}
             </span></strong
           >
         </ion-col>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { HelpersService } from "../services/helpers.service";
 import { ServicesService } from "../services/services.service";
 
 @Component({
@@ -18,7 +19,10 @@ export class Tab2Page {
     speed: 400,
   };
   category = true;
-  constructor(private newsService: ServicesService) {
+  constructor(
+    private newsService: ServicesService,
+    private helperService: HelpersService
+  ) {
     this.getCategories();
   }
 
@@ -103,6 +107,7 @@ export class Tab2Page {
     setTimeout(() => {
       this.category = true;
       this.getAllNews();
+      this.getCategories();
       event.target.complete();
     }, 2000);
   }
